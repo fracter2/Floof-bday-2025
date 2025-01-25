@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoofSettings" load_steps=2 format=3 uid="uid://k2i6jfjss2h"]
+
+[ext_resource type="Script" path="res://FoofSettings.gd" id="1_5jlki"]
+
+[resource]
+script = ExtResource("1_5jlki")
+step_timer = 0.35
+step_randomnes = 0.08
+step_force = 250.0
+drag = 3.0
+click_force = 1000.0

@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://foof.gd" id="1_relv6"]
 
 [sub_resource type="Gradient" id="Gradient_mln1p"]
-offsets = PackedFloat32Array(0.647059, 1)
+offsets = PackedFloat32Array(0.903361, 1)
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_sk8eg"]
 gradient = SubResource("Gradient_mln1p")
-width = 128
-height = 128
+width = 90
+height = 90
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
@@ -25,5 +25,113 @@ texture = SubResource("GradientTexture2D_sk8eg")
 
 [node name="StatusIndicator" type="StatusIndicator" parent="."]
 tooltip = "awe"
+menu = NodePath("../PopupMenu")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="PopupMenu" type="PopupMenu" parent="."]
+title = "im a menu"
+hide_on_item_selection = false
+item_count = 4
+item_0/text = "change size"
+item_1/text = "Toggle Border"
+item_1/id = 4
+item_2/text = "Spawn Cage"
+item_2/id = 2
+item_2/disabled = true
+item_2/separator = true
+item_3/text = "Settings"
+item_3/id = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Close" type="Button" parent="PopupMenu/VBoxContainer"]
+layout_mode = 2
+text = "CLOSE"
+
+[node name="Button2" type="Button" parent="PopupMenu/VBoxContainer"]
+layout_mode = 2
+text = "adada"
+
+[node name="MoveTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+title = "Foof Settings"
+size = Vector2i(350, 179)
+borderless = false
+
+[node name="Container" type="VBoxContainer" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 346.0
+offset_bottom = 175.0
+
+[node name="s1" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s1"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s1"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s2" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s2"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s2"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s3" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s3"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s3"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s4" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s4"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s4"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s5" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s5"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s5"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="HSlider" type="HSlider" parent="PopupPanel/Container/s5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 1000.0
+value = 50.1
+exp_edit = true
+allow_greater = true
+allow_lesser = true
+
+[connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
