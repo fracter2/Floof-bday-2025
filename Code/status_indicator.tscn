@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c0cceb2wsigmc"]
+
+[node name="StatusIndicator" type="StatusIndicator"]
+tooltip = "awe"
+menu = NodePath("PopupMenu")
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+auto_translate_mode = 1
+title = "im a menu"
+hide_on_item_selection = false
+item_count = 4
+item_0/text = "change size"
+item_1/text = "Toggle Border"
+item_1/id = 4
+item_2/text = "Spawn Cage"
+item_2/id = 2
+item_2/disabled = true
+item_2/separator = true
+item_3/text = "Settings"
+item_3/id = 3
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+auto_translate_mode = 1
+title = "Foof Settings"
+size = Vector2i(350, 179)
+borderless = false
+
+[node name="Container" type="VBoxContainer" parent="PopupPanel"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 346.0
+offset_bottom = 175.0
+
+[node name="s1" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s1"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s1"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s2" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s2"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s2"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s3" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s3"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s3"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s4" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s4"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s4"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s5" type="HBoxContainer" parent="PopupPanel/Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/Container/s5"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s5"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="HSlider" type="HSlider" parent="PopupPanel/Container/s5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 1000.0
+value = 50.1
+exp_edit = true
+allow_greater = true
+allow_lesser = true

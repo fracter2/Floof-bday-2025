@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cqgdjsxw33rst"]
 
 [ext_resource type="Script" path="res://foof.gd" id="1_relv6"]
-[ext_resource type="PackedScene" uid="uid://bwbh7mdjok1f" path="res://Code/popup_panel.tscn" id="2_5edup"]
+[ext_resource type="PackedScene" uid="uid://c0cceb2wsigmc" path="res://Code/status_indicator.tscn" id="2_3m0qm"]
 [ext_resource type="PackedScene" uid="uid://br7cmahclngus" path="res://Code/audio_player.tscn" id="3_k3y1v"]
 
 [sub_resource type="Gradient" id="Gradient_mln1p"]
@@ -25,29 +25,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = SubResource("GradientTexture2D_sk8eg")
 
-[node name="StatusIndicator" type="StatusIndicator" parent="."]
-tooltip = "awe"
-menu = NodePath("../PopupMenu")
-
-[node name="PopupMenu" type="PopupMenu" parent="."]
-title = "im a menu"
-hide_on_item_selection = false
-item_count = 4
-item_0/text = "change size"
-item_1/text = "Toggle Border"
-item_1/id = 4
-item_2/text = "Spawn Cage"
-item_2/id = 2
-item_2/disabled = true
-item_2/separator = true
-item_3/text = "Settings"
-item_3/id = 3
+[node name="StatusIndicator" parent="." instance=ExtResource("2_3m0qm")]
 
 [node name="MoveTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
-
-[node name="PopupPanel" parent="." instance=ExtResource("2_5edup")]
 
 [node name="AudioPlayer" parent="." instance=ExtResource("3_k3y1v")]
 
