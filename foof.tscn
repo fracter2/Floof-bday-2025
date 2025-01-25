@@ -1,13 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqgdjsxw33rst"]
+[gd_scene load_steps=6 format=3 uid="uid://cqgdjsxw33rst"]
 
 [ext_resource type="Script" path="res://foof.gd" id="1_relv6"]
-[ext_resource type="Script" path="res://audioplayer.gd" id="2_kdfoc"]
-[ext_resource type="AudioStream" uid="uid://by6t267jb4kyy" path="res://audio/Floof boop.wav" id="3_4hmrh"]
-[ext_resource type="AudioStream" uid="uid://ci5bb8kne6xk4" path="res://audio/Floof don't you dare.wav" id="4_d7kbb"]
-[ext_resource type="AudioStream" uid="uid://bho32dlh5enhm" path="res://audio/Floof noh.wav" id="5_thfgk"]
-[ext_resource type="AudioStream" uid="uid://cmvda3ie42ifi" path="res://audio/Floof nooo.wav" id="6_vm5p8"]
-[ext_resource type="AudioStream" uid="uid://nqumw3p5ud3v" path="res://audio/Floof oof.wav" id="7_wrmar"]
-[ext_resource type="AudioStream" uid="uid://626ktcn1svto" path="res://audio/Floof why.wav" id="8_f6l83"]
+[ext_resource type="PackedScene" uid="uid://bwbh7mdjok1f" path="res://Code/popup_panel.tscn" id="2_5edup"]
+[ext_resource type="PackedScene" uid="uid://br7cmahclngus" path="res://Code/audio_player.tscn" id="3_k3y1v"]
 
 [sub_resource type="Gradient" id="Gradient_mln1p"]
 offsets = PackedFloat32Array(0.903361, 1)
@@ -22,9 +17,8 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 metadata/_snap_enabled = true
 
-[node name="Foof" type="Node2D" node_paths=PackedStringArray("audio_player")]
+[node name="Foof" type="Node2D"]
 script = ExtResource("1_relv6")
-audio_player = NodePath("AudioPlayer")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -49,118 +43,12 @@ item_2/separator = true
 item_3/text = "Settings"
 item_3/id = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu"]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Close" type="Button" parent="PopupMenu/VBoxContainer"]
-layout_mode = 2
-text = "CLOSE"
-
-[node name="Button2" type="Button" parent="PopupMenu/VBoxContainer"]
-layout_mode = 2
-text = "adada"
-
 [node name="MoveTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
-[node name="PopupPanel" type="PopupPanel" parent="."]
-title = "Foof Settings"
-size = Vector2i(350, 179)
-borderless = false
+[node name="PopupPanel" parent="." instance=ExtResource("2_5edup")]
 
-[node name="Container" type="VBoxContainer" parent="PopupPanel"]
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 346.0
-offset_bottom = 175.0
-
-[node name="s1" type="HBoxContainer" parent="PopupPanel/Container"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PopupPanel/Container/s1"]
-layout_mode = 2
-text = "step_timer"
-
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s1"]
-layout_mode = 2
-placeholder_text = "3"
-
-[node name="s2" type="HBoxContainer" parent="PopupPanel/Container"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PopupPanel/Container/s2"]
-layout_mode = 2
-text = "step_timer"
-
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s2"]
-layout_mode = 2
-placeholder_text = "3"
-
-[node name="s3" type="HBoxContainer" parent="PopupPanel/Container"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PopupPanel/Container/s3"]
-layout_mode = 2
-text = "step_timer"
-
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s3"]
-layout_mode = 2
-placeholder_text = "3"
-
-[node name="s4" type="HBoxContainer" parent="PopupPanel/Container"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PopupPanel/Container/s4"]
-layout_mode = 2
-text = "step_timer"
-
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s4"]
-layout_mode = 2
-placeholder_text = "3"
-
-[node name="s5" type="HBoxContainer" parent="PopupPanel/Container"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PopupPanel/Container/s5"]
-layout_mode = 2
-text = "step_timer"
-
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s5"]
-layout_mode = 2
-placeholder_text = "3"
-
-[node name="HSlider" type="HSlider" parent="PopupPanel/Container/s5"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-min_value = 0.1
-max_value = 1000.0
-value = 50.1
-exp_edit = true
-allow_greater = true
-allow_lesser = true
-
-[node name="AudioPlayer" type="Node" parent="."]
-script = ExtResource("2_kdfoc")
-
-[node name="sound1" type="AudioStreamPlayer2D" parent="AudioPlayer"]
-stream = ExtResource("3_4hmrh")
-
-[node name="sound2" type="AudioStreamPlayer2D" parent="AudioPlayer"]
-stream = ExtResource("4_d7kbb")
-
-[node name="sound3" type="AudioStreamPlayer2D" parent="AudioPlayer"]
-stream = ExtResource("5_thfgk")
-
-[node name="sound4" type="AudioStreamPlayer2D" parent="AudioPlayer"]
-stream = ExtResource("6_vm5p8")
-
-[node name="sound5" type="AudioStreamPlayer2D" parent="AudioPlayer"]
-stream = ExtResource("7_wrmar")
-
-[node name="sound6" type="AudioStreamPlayer2D" parent="AudioPlayer"]
-stream = ExtResource("8_f6l83")
+[node name="AudioPlayer" parent="." instance=ExtResource("3_k3y1v")]
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]

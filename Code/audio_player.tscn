@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://br7cmahclngus"]
+
+[ext_resource type="Script" path="res://audioplayer.gd" id="1_f6wb2"]
+[ext_resource type="AudioStream" uid="uid://by6t267jb4kyy" path="res://audio/Floof boop.wav" id="2_aufg3"]
+[ext_resource type="AudioStream" uid="uid://ci5bb8kne6xk4" path="res://audio/Floof don't you dare.wav" id="3_hjg05"]
+[ext_resource type="AudioStream" uid="uid://bho32dlh5enhm" path="res://audio/Floof noh.wav" id="4_k31ee"]
+[ext_resource type="AudioStream" uid="uid://cmvda3ie42ifi" path="res://audio/Floof nooo.wav" id="5_5ywcc"]
+[ext_resource type="AudioStream" uid="uid://nqumw3p5ud3v" path="res://audio/Floof oof.wav" id="6_yapxb"]
+[ext_resource type="AudioStream" uid="uid://626ktcn1svto" path="res://audio/Floof why.wav" id="7_yyamv"]
+
+[node name="AudioPlayer" type="Node"]
+script = ExtResource("1_f6wb2")
+
+[node name="sound1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_aufg3")
+
+[node name="sound2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hjg05")
+
+[node name="sound3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_k31ee")
+
+[node name="sound4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_5ywcc")
+
+[node name="sound5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_yapxb")
+
+[node name="sound6" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_yyamv")

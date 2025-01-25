@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bwbh7mdjok1f"]
+
+[node name="PopupPanel" type="PopupPanel"]
+auto_translate_mode = 1
+title = "Foof Settings"
+size = Vector2i(350, 179)
+borderless = false
+
+[node name="Container" type="VBoxContainer" parent="."]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 346.0
+offset_bottom = 175.0
+
+[node name="s1" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container/s1"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="Container/s1"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s2" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container/s2"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="Container/s2"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s3" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container/s3"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="Container/s3"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s4" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container/s4"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="Container/s4"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="s5" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Container/s5"]
+layout_mode = 2
+text = "step_timer"
+
+[node name="LineEdit" type="LineEdit" parent="Container/s5"]
+layout_mode = 2
+placeholder_text = "3"
+
+[node name="HSlider" type="HSlider" parent="Container/s5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.1
+max_value = 1000.0
+value = 50.1
+exp_edit = true
+allow_greater = true
+allow_lesser = true
