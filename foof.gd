@@ -41,10 +41,18 @@ func _process(delta):
 	velocity *= 1-(stats.drag * delta)
 	
 	if stats.borders:
-		if window.position.x < area.position.x and velocity.x < 0: velocity.x *= -1
-		if window.position.y < area.position.y and velocity.y: velocity.y *= -1
-		if (window.position.x  + window.size.x) > area.end.x and velocity.x > 0: velocity.x *= -1
-		if (window.position.y + window.size.y) > area.end.y and velocity.y > 0: velocity.y *= -1
+		if window.position.x < area.position.x and velocity.x < 0: 
+			velocity.x *= -1
+			if abs(velocity.x) > 200: $"Bounce SFX1".play()
+		if window.position.y < area.position.y and velocity.y < 0: 
+			velocity.y *= -1
+			if abs(velocity.y) > 200: $"Bounce SFX2".play()
+		if (window.position.x  + window.size.x) > area.end.x and velocity.x > 0: 
+			velocity.x *= -1
+			if abs(velocity.x) > 200: $"Bounce SFX3".play()
+		if (window.position.y + window.size.y) > area.end.y and velocity.y > 0: 
+			velocity.y *= -1
+			if abs(velocity.y) > 200: $"Bounce SFX4".play()
 	
 	if dragging:
 		var pos_delta:Vector2 = DisplayServer.mouse_get_position() - (window.position + window.size/2)

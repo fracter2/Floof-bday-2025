@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqgdjsxw33rst"]
+[gd_scene load_steps=6 format=3 uid="uid://cqgdjsxw33rst"]
 
 [ext_resource type="Script" path="res://foof.gd" id="1_relv6"]
 [ext_resource type="PackedScene" uid="uid://c0cceb2wsigmc" path="res://Code/status_indicator.tscn" id="2_3m0qm"]
 [ext_resource type="Texture2D" uid="uid://bb1qb51ihh5d2" path="res://Sprites/foof1.png" id="2_q7ltk"]
 [ext_resource type="PackedScene" uid="uid://br7cmahclngus" path="res://Code/audio_player.tscn" id="3_k3y1v"]
+[ext_resource type="AudioStream" uid="uid://bpq1jbkjpgm1d" path="res://audio/Bounce.wav" id="5_5apm7"]
 
 [node name="Foof" type="Node2D" node_paths=PackedStringArray("audio_player")]
 script = ExtResource("1_relv6")
@@ -20,5 +21,28 @@ one_shot = true
 autostart = true
 
 [node name="AudioPlayer" parent="." instance=ExtResource("3_k3y1v")]
+
+[node name="Bounce SFX1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5apm7")
+volume_db = -8.0
+max_polyphony = 6
+
+[node name="Bounce SFX2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5apm7")
+volume_db = -8.0
+pitch_scale = 0.93
+max_polyphony = 6
+
+[node name="Bounce SFX3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5apm7")
+volume_db = -8.0
+pitch_scale = 1.07
+max_polyphony = 6
+
+[node name="Bounce SFX4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5apm7")
+volume_db = -8.0
+pitch_scale = 1.04
+max_polyphony = 6
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_move_timer_timeout"]
