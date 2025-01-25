@@ -1,4 +1,5 @@
 extends Node2D
+class_name foof
 
 @onready var window:Window = get_window()
 @onready var viewport:Viewport = get_viewport()

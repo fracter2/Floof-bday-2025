@@ -15,6 +15,7 @@ position = Vector2(50, 43)
 texture = ExtResource("2_q7ltk")
 
 [node name="StatusIndicator" parent="." instance=ExtResource("2_3m0qm")]
+tooltip = "FLOOF Manager tm"
 
 [node name="MoveTimer" type="Timer" parent="."]
 one_shot = true

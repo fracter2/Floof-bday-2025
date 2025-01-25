@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0cceb2wsigmc"]
+[gd_scene load_steps=7 format=3 uid="uid://c0cceb2wsigmc"]
 
 [ext_resource type="Texture2D" uid="uid://bm81u7qwensfh" path="res://Sprites/fooficon.png" id="1_gqaop"]
 
@@ -6,24 +6,10 @@
 script/source = "extends StatusIndicator
 
 
-
+var floof:foof
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
-[sub_resource type="GDScript" id="GDScript_7h4df"]
-script/source = "extends PopupMenu
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+	floof = get_parent() as foof
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,7 +17,11 @@ func _process(delta):
 	pass
 
 
-func _on_id_pressed(id):
+func _on_popup_menu_id_pressed(id):
+	if id == 0:
+		AudioServer.set_bus_mute(0, !AudioServer.is_bus_mute(0))
+
+	
 	
 	## Settings
 	if id == 3:
@@ -63,17 +53,16 @@ auto_translate_mode = 1
 title = "im a menu"
 hide_on_item_selection = false
 item_count = 4
-item_0/text = "change size"
-item_0/disabled = true
+item_0/text = "Mute"
 item_1/text = "Toggle Border"
 item_1/id = 1
+item_1/disabled = true
 item_2/text = "Spawn Cage"
 item_2/id = 2
 item_2/disabled = true
 item_2/separator = true
 item_3/text = "Settings"
 item_3/id = 3
-script = SubResource("GDScript_7h4df")
 
 [node name="PopupPanel" type="PopupPanel" parent="."]
 auto_translate_mode = 1
@@ -349,4 +338,5 @@ size_flags_horizontal = 10
 size_flags_vertical = 4
 button_pressed = true
 
+[connection signal="id_pressed" from="PopupMenu" to="." method="_on_popup_menu_id_pressed"]
 [connection signal="id_pressed" from="PopupMenu" to="PopupMenu" method="_on_id_pressed"]
