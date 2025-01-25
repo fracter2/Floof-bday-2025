@@ -1,4 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0cceb2wsigmc"]
+[gd_scene load_steps=8 format=3 uid="uid://c0cceb2wsigmc"]
+
+[ext_resource type="Texture2D" uid="uid://bm81u7qwensfh" path="res://Sprites/fooficon.png" id="1_gqaop"]
 
 [sub_resource type="GDScript" id="GDScript_k4hyk"]
 script/source = "extends StatusIndicator
@@ -52,6 +54,7 @@ gradient = SubResource("Gradient_t1i3f")
 
 [node name="StatusIndicator" type="StatusIndicator"]
 tooltip = "awe"
+icon = ExtResource("1_gqaop")
 menu = NodePath("PopupMenu")
 script = SubResource("GDScript_k4hyk")
 

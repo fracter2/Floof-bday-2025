@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ci5bb8kne6xk4"
-path="res://.godot/imported/Floof don't you dare.wav-91ad6523eda2865a9713acd0b62a7eec.sample"
+path="res://.godot/imported/Floof don't you dare.wav-cece6fe13bd4bfeb8362712958c33fca.sample"
 
 [deps]
 
-source_file="res://Audio/Floof don't you dare.wav"
-dest_files=["res://.godot/imported/Floof don't you dare.wav-91ad6523eda2865a9713acd0b62a7eec.sample"]
+source_file="res://audio/Floof don't you dare.wav"
+dest_files=["res://.godot/imported/Floof don't you dare.wav-cece6fe13bd4bfeb8362712958c33fca.sample"]
 
 [params]
 

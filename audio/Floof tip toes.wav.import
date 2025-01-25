@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cwuxbc554uy2k"
-path="res://.godot/imported/Floof tip toes.wav-9ab19cca6037f9c9309235b5bd1bf1fa.sample"
+path="res://.godot/imported/Floof tip toes.wav-584474679520be1eff0042de72485b79.sample"
 
 [deps]
 
-source_file="res://Audio/Floof tip toes.wav"
-dest_files=["res://.godot/imported/Floof tip toes.wav-9ab19cca6037f9c9309235b5bd1bf1fa.sample"]
+source_file="res://audio/Floof tip toes.wav"
+dest_files=["res://.godot/imported/Floof tip toes.wav-584474679520be1eff0042de72485b79.sample"]
 
 [params]
 

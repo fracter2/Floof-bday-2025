@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dbgn2eiomgb0m"
-path="res://.godot/imported/Floof blooppa.wav-d73fdeb0210c78003d210c8284476177.sample"
+path="res://.godot/imported/Floof blooppa.wav-aee39e00d6917e2d130c8a6b917b6db3.sample"
 
 [deps]
 
-source_file="res://Audio/Floof blooppa.wav"
-dest_files=["res://.godot/imported/Floof blooppa.wav-d73fdeb0210c78003d210c8284476177.sample"]
+source_file="res://audio/Floof blooppa.wav"
+dest_files=["res://.godot/imported/Floof blooppa.wav-aee39e00d6917e2d130c8a6b917b6db3.sample"]
 
 [params]
 

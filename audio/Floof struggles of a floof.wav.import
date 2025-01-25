@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ctfdaahq22h0a"
-path="res://.godot/imported/Floof struggles of a floof.wav-d61f9675a1d06a4e61db0ca9e6d3e769.sample"
+path="res://.godot/imported/Floof struggles of a floof.wav-5da3aa3894a24f8b713a5bd8f4170ef7.sample"
 
 [deps]
 
-source_file="res://Audio/Floof struggles of a floof.wav"
-dest_files=["res://.godot/imported/Floof struggles of a floof.wav-d61f9675a1d06a4e61db0ca9e6d3e769.sample"]
+source_file="res://audio/Floof struggles of a floof.wav"
+dest_files=["res://.godot/imported/Floof struggles of a floof.wav-5da3aa3894a24f8b713a5bd8f4170ef7.sample"]
 
 [params]
 

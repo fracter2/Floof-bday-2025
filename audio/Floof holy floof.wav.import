@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d15rrkfsnsngo"
-path="res://.godot/imported/Floof holy floof.wav-22edaefff59137b0db6213c6ef55274f.sample"
+path="res://.godot/imported/Floof holy floof.wav-c4c26eb19085e6104a065d000ca9fea8.sample"
 
 [deps]
 
-source_file="res://Audio/Floof holy floof.wav"
-dest_files=["res://.godot/imported/Floof holy floof.wav-22edaefff59137b0db6213c6ef55274f.sample"]
+source_file="res://audio/Floof holy floof.wav"
+dest_files=["res://.godot/imported/Floof holy floof.wav-c4c26eb19085e6104a065d000ca9fea8.sample"]
 
 [params]
 
