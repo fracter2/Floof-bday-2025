@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bho32dlh5enhm"
-path="res://.godot/imported/Floof noh.wav-5d5f1e15dd0b9cb3bfed06122b0fb425.sample"
+uid="uid://b4u25q1mdxmhw"
+path="res://.godot/imported/Floof tap.wav-549830fb09f09ec69a2c6cde75b350d1.sample"
 
 [deps]
 
-source_file="res://audio/Floof noh.wav"
-dest_files=["res://.godot/imported/Floof noh.wav-5d5f1e15dd0b9cb3bfed06122b0fb425.sample"]
+source_file="res://audio/Floof tap.wav"
+dest_files=["res://.godot/imported/Floof tap.wav-549830fb09f09ec69a2c6cde75b350d1.sample"]
 
 [params]
 

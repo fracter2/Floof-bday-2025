@@ -47,7 +47,7 @@ func _process(delta):
 	## Launch the foof slightly. +1dmg
 	if Input.is_action_just_pressed("click"):
 		velocity += Vector2.UP * stats.click_force
-		audio_player.play_sound()
+		audio_player.disturbed_sound()
 		
 	elif Input.is_action_just_released("click"):
 		pass
@@ -81,4 +81,5 @@ func _on_move_timer_timeout():
 	movement_dir = DisplayServer.mouse_get_position() - (window.position + window.size/2)
 	velocity += movement_dir.normalized() * stats.step_force
 	
+	audio_player.walking_sound()
 	
