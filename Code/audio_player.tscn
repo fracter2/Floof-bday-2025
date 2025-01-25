@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://br7cmahclngus"]
 
 [ext_resource type="Script" path="res://audioplayer.gd" id="1_f6wb2"]
-[ext_resource type="AudioStream" uid="uid://dbgn2eiomgb0m" path="res://audio/Floof blooppa.wav" id="2_ekogq"]
-[ext_resource type="AudioStream" uid="uid://ci5bb8kne6xk4" path="res://audio/Floof don't you dare.wav" id="3_hjg05"]
-[ext_resource type="AudioStream" uid="uid://cmvda3ie42ifi" path="res://audio/Floof nooo.wav" id="5_5ywcc"]
-[ext_resource type="AudioStream" uid="uid://d15rrkfsnsngo" path="res://audio/Floof holy floof.wav" id="5_7p1iu"]
-[ext_resource type="AudioStream" uid="uid://nqumw3p5ud3v" path="res://audio/Floof oof.wav" id="6_yapxb"]
-[ext_resource type="AudioStream" uid="uid://ctfdaahq22h0a" path="res://audio/Floof struggles of a floof.wav" id="9_akrat"]
-[ext_resource type="AudioStream" uid="uid://b4u25q1mdxmhw" path="res://audio/Floof tap.wav" id="10_85m0e"]
+[ext_resource type="AudioStream" uid="uid://dbgn2eiomgb0m" path="res://Audio/Floof blooppa.wav" id="2_ekogq"]
+[ext_resource type="AudioStream" uid="uid://ci5bb8kne6xk4" path="res://Audio/Floof don't you dare.wav" id="3_hjg05"]
+[ext_resource type="AudioStream" uid="uid://cmvda3ie42ifi" path="res://Audio/Floof nooo.wav" id="5_5ywcc"]
+[ext_resource type="AudioStream" uid="uid://d15rrkfsnsngo" path="res://Audio/Floof holy floof.wav" id="5_7p1iu"]
+[ext_resource type="AudioStream" uid="uid://nqumw3p5ud3v" path="res://Audio/Floof oof.wav" id="6_yapxb"]
+[ext_resource type="AudioStream" uid="uid://ctfdaahq22h0a" path="res://Audio/Floof struggles of a floof.wav" id="9_akrat"]
+[ext_resource type="AudioStream" uid="uid://b4u25q1mdxmhw" path="res://Audio/Floof tap.wav" id="10_85m0e"]
 
 [node name="AudioPlayer" type="Node"]
 script = ExtResource("1_f6wb2")

@@ -12,6 +12,11 @@ var target_pos:Vector2
 
 @export var audio_player: AudioPlayer
 
+# Sprites
+var i = 1
+var texture1 = load("res://Sprites/foof1.png")
+var texture2 = load("res://Sprites/foof2.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	window.close_requested.connect(_on_close_requested)
@@ -25,7 +30,7 @@ func _ready():
 	stats = ResourceLoader.load("res://DEFAULT.tres") as FoofSettings
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta):	
 	target_pos += velocity * delta
 	window.position = Vector2i(target_pos)
 	velocity *= 1-(stats.drag * delta)
@@ -82,4 +87,22 @@ func _on_move_timer_timeout():
 	velocity += movement_dir.normalized() * stats.step_force
 	
 	audio_player.walking_sound()
+	switch_sprite()
+	flip_sprite()
+
+
+# Sprite Stuff
+func flip_sprite() -> void:
+	if $Sprite2D.flip_h and window.position.x < DisplayServer.mouse_get_position().x:
+		$Sprite2D.flip_h = false
+	elif not $Sprite2D.flip_h and window.position.x > DisplayServer.mouse_get_position().x:
+		$Sprite2D.flip_h = true
+
+
+func switch_sprite() -> void:
+	if i >= 2: i = 1
+	else: i += 1
 	
+	match i:
+		1: $Sprite2D.texture = texture1
+		2: $Sprite2D.texture = texture2

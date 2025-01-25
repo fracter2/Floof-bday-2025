@@ -1,30 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqgdjsxw33rst"]
+[gd_scene load_steps=5 format=3 uid="uid://cqgdjsxw33rst"]
 
 [ext_resource type="Script" path="res://foof.gd" id="1_relv6"]
 [ext_resource type="PackedScene" uid="uid://c0cceb2wsigmc" path="res://Code/status_indicator.tscn" id="2_3m0qm"]
+[ext_resource type="Texture2D" uid="uid://bb1qb51ihh5d2" path="res://Sprites/foof1.png" id="2_q7ltk"]
 [ext_resource type="PackedScene" uid="uid://br7cmahclngus" path="res://Code/audio_player.tscn" id="3_k3y1v"]
-
-[sub_resource type="Gradient" id="Gradient_mln1p"]
-offsets = PackedFloat32Array(0.903361, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_sk8eg"]
-gradient = SubResource("Gradient_mln1p")
-width = 90
-height = 90
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(1, 0.5)
-metadata/_snap_enabled = true
 
 [node name="Foof" type="Node2D" node_paths=PackedStringArray("audio_player")]
 script = ExtResource("1_relv6")
 audio_player = NodePath("AudioPlayer")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("GradientTexture2D_sk8eg")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(50, 43)
+texture = ExtResource("2_q7ltk")
 
 [node name="StatusIndicator" parent="." instance=ExtResource("2_3m0qm")]
 
