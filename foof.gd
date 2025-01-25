@@ -10,6 +10,8 @@ var velocity:Vector2 = Vector2(100,100)
 var movement_dir:Vector2 = Vector2(0.75, 0.75)
 var target_pos:Vector2
 
+@export var audio_player: AudioPlayer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	window.close_requested.connect(_on_close_requested)
@@ -45,6 +47,7 @@ func _process(delta):
 	## Launch the foof slightly. +1dmg
 	if Input.is_action_just_pressed("click"):
 		velocity += Vector2.UP * stats.click_force
+		audio_player.play_sound()
 		
 	elif Input.is_action_just_released("click"):
 		pass
