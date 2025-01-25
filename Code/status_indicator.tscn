@@ -1,8 +1,59 @@
-[gd_scene format=3 uid="uid://c0cceb2wsigmc"]
+[gd_scene load_steps=7 format=3 uid="uid://c0cceb2wsigmc"]
+
+[sub_resource type="GDScript" id="GDScript_k4hyk"]
+script/source = "extends StatusIndicator
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_7h4df"]
+script/source = "extends PopupMenu
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_id_pressed(id):
+	
+	## Settings
+	if id == 3:
+		$\"../PopupPanel\".popup_centered()
+"
+
+[sub_resource type="Gradient" id="Gradient_y6ifd"]
+offsets = PackedFloat32Array(0.846154)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eu2c5"]
+gradient = SubResource("Gradient_y6ifd")
+
+[sub_resource type="Gradient" id="Gradient_t1i3f"]
+offsets = PackedFloat32Array(0.846154)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xg15i"]
+gradient = SubResource("Gradient_t1i3f")
 
 [node name="StatusIndicator" type="StatusIndicator"]
 tooltip = "awe"
 menu = NodePath("PopupMenu")
+script = SubResource("GDScript_k4hyk")
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
 auto_translate_mode = 1
@@ -10,83 +61,229 @@ title = "im a menu"
 hide_on_item_selection = false
 item_count = 4
 item_0/text = "change size"
+item_0/disabled = true
 item_1/text = "Toggle Border"
-item_1/id = 4
+item_1/id = 1
 item_2/text = "Spawn Cage"
 item_2/id = 2
 item_2/disabled = true
 item_2/separator = true
 item_3/text = "Settings"
 item_3/id = 3
+script = SubResource("GDScript_7h4df")
 
 [node name="PopupPanel" type="PopupPanel" parent="."]
 auto_translate_mode = 1
 title = "Foof Settings"
-size = Vector2i(350, 179)
+initial_position = 4
+size = Vector2i(350, 359)
 borderless = false
 
-[node name="Container" type="VBoxContainer" parent="PopupPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel"]
 offset_left = 4.0
 offset_top = 4.0
 offset_right = 346.0
-offset_bottom = 175.0
+offset_bottom = 355.0
 
-[node name="s1" type="HBoxContainer" parent="PopupPanel/Container"]
+[node name="Load Selector" type="HBoxContainer" parent="PopupPanel/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PopupPanel/Container/s1"]
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/Load Selector"]
+layout_mode = 2
+text = "Floof To Load"
+
+[node name="FLOOF SELECTOR" type="OptionButton" parent="PopupPanel/VBoxContainer/Load Selector"]
+layout_mode = 2
+size_flags_horizontal = 10
+selected = 0
+item_count = 2
+popup/item_0/text = "Default"
+popup/item_1/text = "Dunno"
+popup/item_1/id = 1
+
+[node name="Buttons" type="HBoxContainer" parent="PopupPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="SAVE" type="Button" parent="PopupPanel/VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 2
+disabled = true
+text = "  SAVE  "
+
+[node name="NAME" type="LineEdit" parent="PopupPanel/VBoxContainer/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "name goes here"
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "FLOOF SETTINGS"
+
+[node name="OPTIONS" type="TabContainer" parent="PopupPanel/VBoxContainer"]
+layout_mode = 2
+current_tab = 0
+
+[node name="BEHAVIOUR" type="VBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="sprite_size" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/sprite_size"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "sprite_size"
+
+[node name="HSlider" type="HSlider" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/sprite_size"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.5
+min_value = 0.01
+step = 0.01
+value = 1.0
+exp_edit = true
+allow_greater = true
+tick_count = 2
+ticks_on_borders = true
+
+[node name="always_on_top" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/always_on_top"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "always_on_top"
+
+[node name="LineEdit" type="CheckBox" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/always_on_top"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+button_pressed = true
+
+[node name="click_force" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/click_force"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "click_force"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/click_force"]
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "1000"
+
+[node name="Texture1" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/Texture1"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "texture1"
+
+[node name="Button" type="Button" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/Texture1"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Paste from Clippboard"
+
+[node name="TextureRect" type="TextureRect" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/Texture1"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_eu2c5")
+stretch_mode = 2
+
+[node name="Texture2" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/Texture2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "texture2"
+
+[node name="Button" type="Button" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/Texture2"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Paste from Clippboard"
+
+[node name="TextureRect" type="TextureRect" parent="PopupPanel/VBoxContainer/OPTIONS/BEHAVIOUR/Texture2"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_xg15i")
+stretch_mode = 2
+
+[node name="MOVEMENT" type="VBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="step_timer" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/step_timer"]
 layout_mode = 2
 text = "step_timer"
 
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s1"]
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/step_timer"]
 layout_mode = 2
+size_flags_horizontal = 10
+text = "0.35"
+placeholder_text = "0.35"
+
+[node name="step_randomnes" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/step_randomnes"]
+layout_mode = 2
+text = "step_randomnes"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/step_randomnes"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "0.08"
+placeholder_text = "0.08"
+
+[node name="step_force" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/step_force"]
+layout_mode = 2
+text = "step_force"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/step_force"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "250"
+placeholder_text = "250"
+
+[node name="drag" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/drag"]
+layout_mode = 2
+text = "drag"
+
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/drag"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "3"
 placeholder_text = "3"
 
-[node name="s2" type="HBoxContainer" parent="PopupPanel/Container"]
+[node name="follow_range" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PopupPanel/Container/s2"]
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/follow_range"]
 layout_mode = 2
-text = "step_timer"
+text = "follow_range"
 
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s2"]
+[node name="LineEdit" type="LineEdit" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/follow_range"]
 layout_mode = 2
-placeholder_text = "3"
+size_flags_horizontal = 10
+text = "0"
+placeholder_text = "0"
 
-[node name="s3" type="HBoxContainer" parent="PopupPanel/Container"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PopupPanel/Container/s3"]
-layout_mode = 2
-text = "step_timer"
-
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s3"]
-layout_mode = 2
-placeholder_text = "3"
-
-[node name="s4" type="HBoxContainer" parent="PopupPanel/Container"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PopupPanel/Container/s4"]
-layout_mode = 2
-text = "step_timer"
-
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s4"]
-layout_mode = 2
-placeholder_text = "3"
-
-[node name="s5" type="HBoxContainer" parent="PopupPanel/Container"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PopupPanel/Container/s5"]
-layout_mode = 2
-text = "step_timer"
-
-[node name="LineEdit" type="LineEdit" parent="PopupPanel/Container/s5"]
-layout_mode = 2
-placeholder_text = "3"
-
-[node name="HSlider" type="HSlider" parent="PopupPanel/Container/s5"]
+[node name="HSlider" type="HSlider" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/follow_range"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -96,3 +293,57 @@ value = 50.1
 exp_edit = true
 allow_greater = true
 allow_lesser = true
+
+[node name="borders" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/borders"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "borders"
+
+[node name="LineEdit" type="CheckBox" parent="PopupPanel/VBoxContainer/OPTIONS/MOVEMENT/borders"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+button_pressed = true
+
+[node name="SOUNDS" type="VBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="volume" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/SOUNDS"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/SOUNDS/volume"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "volume"
+
+[node name="HSlider" type="HSlider" parent="PopupPanel/VBoxContainer/OPTIONS/SOUNDS/volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.5
+step = 0.25
+value = 50.0
+allow_greater = true
+tick_count = 2
+ticks_on_borders = true
+
+[node name="volume_toggle" type="HBoxContainer" parent="PopupPanel/VBoxContainer/OPTIONS/SOUNDS"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer/OPTIONS/SOUNDS/volume_toggle"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "volume_toggle"
+
+[node name="LineEdit" type="CheckBox" parent="PopupPanel/VBoxContainer/OPTIONS/SOUNDS/volume_toggle"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+button_pressed = true
+
+[connection signal="id_pressed" from="PopupMenu" to="PopupMenu" method="_on_id_pressed"]
