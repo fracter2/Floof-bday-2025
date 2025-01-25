@@ -12,6 +12,8 @@ var target_pos:Vector2
 var mouse_in:bool = false;
 var dragging:bool = false;
 
+@export var pull_strength:float = 400
+
 @export var audio_player: AudioPlayer
 
 # Sprites
@@ -44,22 +46,22 @@ func _process(delta):
 		if (window.position.x  + window.size.x) > area.end.x and velocity.x > 0: velocity.x *= -1
 		if (window.position.y + window.size.y) > area.end.y and velocity.y > 0: velocity.y *= -1
 	
+	if dragging:
+		var pos_delta:Vector2 = DisplayServer.mouse_get_position() - (window.position + window.size/2)
+		velocity += ((pull_strength * abs(pos_delta).normalized()) * pos_delta) * delta
+	
 	## Launch the foof slightly.
 	if Input.is_action_just_pressed("click") and mouse_in:
 		velocity += Vector2.UP * stats.click_force
 		audio_player.disturbed_sound()
 	
 	## Drag the foof. Might need a invisible "cursor-bound" window for seing the release trigger
-	if Input.is_action_just_pressed("click2") and mouse_in:
-		dragging = true
-		
-	if Input.is_action_just_released("click2") and dragging:
-		pass
+	if Input.is_action_just_pressed("click2") and mouse_in: dragging = true
+	if Input.is_action_just_released("click2") and dragging: dragging = false
 	
 	if mouse_in:
-		if Input.is_action_just_pressed("wheelDown"):
-			$Sprite2D.rotation_degrees += 22.5
-		
+		if Input.is_action_just_pressed("wheelDown"): $Sprite2D.rotation_degrees += 22.5
+		if Input.is_action_just_pressed("wheelUp"): $Sprite2D.rotation_degrees -= 22.5
 
 
 func _on_mouse_entered():
@@ -79,7 +81,7 @@ func _on_move_timer_timeout():
 	movement_dir = DisplayServer.mouse_get_position() - (window.position + window.size/2)
 	velocity += movement_dir.normalized() * stats.step_force * k
 	
-	audio_player.walking_sound()
+	if not dragging: audio_player.walking_sound()
 	switch_sprite()
 	flip_sprite()
 
