@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbgn2eiomgb0m"
+path="res://.godot/imported/Floof blooppa.wav-aee39e00d6917e2d130c8a6b917b6db3.sample"
+
+[deps]
+
+source_file="res://audio/Floof blooppa.wav"
+dest_files=["res://.godot/imported/Floof blooppa.wav-aee39e00d6917e2d130c8a6b917b6db3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

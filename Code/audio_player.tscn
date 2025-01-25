@@ -1,30 +1,42 @@
-[gd_scene load_steps=8 format=3 uid="uid://br7cmahclngus"]
+[gd_scene load_steps=11 format=3 uid="uid://br7cmahclngus"]
 
 [ext_resource type="Script" path="res://audioplayer.gd" id="1_f6wb2"]
 [ext_resource type="AudioStream" uid="uid://by6t267jb4kyy" path="res://audio/Floof boop.wav" id="2_aufg3"]
+[ext_resource type="AudioStream" uid="uid://dbgn2eiomgb0m" path="res://audio/Floof blooppa.wav" id="2_ekogq"]
 [ext_resource type="AudioStream" uid="uid://ci5bb8kne6xk4" path="res://audio/Floof don't you dare.wav" id="3_hjg05"]
 [ext_resource type="AudioStream" uid="uid://bho32dlh5enhm" path="res://audio/Floof noh.wav" id="4_k31ee"]
 [ext_resource type="AudioStream" uid="uid://cmvda3ie42ifi" path="res://audio/Floof nooo.wav" id="5_5ywcc"]
+[ext_resource type="AudioStream" uid="uid://d15rrkfsnsngo" path="res://audio/Floof holy floof.wav" id="5_7p1iu"]
 [ext_resource type="AudioStream" uid="uid://nqumw3p5ud3v" path="res://audio/Floof oof.wav" id="6_yapxb"]
 [ext_resource type="AudioStream" uid="uid://626ktcn1svto" path="res://audio/Floof why.wav" id="7_yyamv"]
+[ext_resource type="AudioStream" uid="uid://ctfdaahq22h0a" path="res://audio/Floof struggles of a floof.wav" id="9_akrat"]
 
 [node name="AudioPlayer" type="Node"]
 script = ExtResource("1_f6wb2")
 
 [node name="sound1" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_aufg3")
+stream = ExtResource("2_ekogq")
 
 [node name="sound2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_hjg05")
+stream = ExtResource("2_aufg3")
 
 [node name="sound3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_k31ee")
+stream = ExtResource("3_hjg05")
 
 [node name="sound4" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_5ywcc")
+stream = ExtResource("5_7p1iu")
 
 [node name="sound5" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_yapxb")
+stream = ExtResource("4_k31ee")
 
 [node name="sound6" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_5ywcc")
+
+[node name="sound7" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_yapxb")
+
+[node name="sound8" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_akrat")
+
+[node name="sound9" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_yyamv")
